@@ -23,7 +23,7 @@ struct FiresbaseTestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
                 .environmentObject(DataModel())
         }
     }

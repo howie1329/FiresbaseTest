@@ -32,6 +32,18 @@ class DataModel: ObservableObject{
         
     }
     
+    func signOutUser(){
+        do{
+            try Auth.auth().signOut()
+        }
+        catch{
+            print(error)
+        }
+        
+        self.currentUserID = ""
+        self.signInStatus.toggle()
+    }
+    
     func getMessages(userID:String){
         let db = Firestore.firestore()
         

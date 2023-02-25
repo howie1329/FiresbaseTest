@@ -15,13 +15,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button {
-                model.signInUser(email: "test@test.com", password: "pass123")
-                print(model.currentUserID)
-                print(model.signInStatus)
-            } label: {
-                Text("Sign In")
-            }
             
             Button {
                 model.createMessage(message: Message(id: "test",userID: model.currentUserID, title: "Title1", body: "Body1"))
@@ -35,6 +28,12 @@ struct ContentView: View {
                 print(model.messages)
             } label: {
                 Text("Get Message")
+            }
+            
+            Button {
+                model.signOutUser()
+            } label: {
+                Text("Sign Out")
             }
 
         }
